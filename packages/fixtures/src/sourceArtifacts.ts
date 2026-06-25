@@ -1,6 +1,6 @@
-import type {SourceArtifact} from '@noting/core';
+import type { SourceArtifact } from '@noting/core';
 import { parseRunningMinutes } from '@noting/ingest';
-export const runningMinutesExcerpt=`# Commercial Rent Stabilization Collaboration — Running Minutes Excerpt
+export const runningMinutesExcerpt = `# Commercial Rent Stabilization Collaboration — Running Minutes Excerpt
 
 Source status date: 2026-05-29
 Default visibility: team_internal
@@ -42,7 +42,75 @@ Every signup should lead to clear follow-up. Parallel lists are acceptable only 
 ## Event Follow-Up Principle
 Name the source and role clearly: host, speaker, tabling / outreach lead, data owner, and follow-up owner. Do not merge partner lists without consent and an agreed handoff.
 `;
-export const movementMap:SourceArtifact={id:'movement-map-policy-lineages',title:'NAC Movement Map in Terms of Policy Lineages',sourceType:'visual_map',importedAt:'2026-06-23T09:00:00Z',sourceStatusDate:'2026-05-29',visibility:'team_internal',consentLevel:'unknown',publicUseAllowed:false,legalAdvice:false,notes:'Structured fixture, no image OCR.',segments:[{artifactId:'movement-map-policy-lineages',id:'seg-lineage',heading:'Lineage',text:'The map separates SBJSA, CRS, city Council, and Albany lanes and flags wedge traps to avoid.',visibility:'team_internal',consentLevel:'unknown',publicUseAllowed:false}]};
-export const legalRedline:SourceArtifact={id:'legislative-provenance-redline-2019-2025',title:'NAC / Commercial Rent Stabilization: Legislative Provenance Redline, 2019–2025',sourceType:'legislative_redline',importedAt:'2026-06-23T09:00:00Z',sourceStatusDate:'2026-05-29',visibility:'restricted',consentLevel:'unknown',publicUseAllowed:false,legalAdvice:false,notes:'Orientation and provenance tool, not legal advice.',segments:[{artifactId:'legislative-provenance-redline-2019-2025',id:'seg-how-to-read',heading:'How to read',text:'Use the redline to orient lineage among Intro 93, Fair Rent NYC recommendations, SBJSA-derived renewal language, Albany bills, and provisions needing legal review.',visibility:'restricted',consentLevel:'unknown',publicUseAllowed:false}]};
-export const archivalBoundary:SourceArtifact={id:'archival-email-consent-boundary',title:'#FairRentNYC Archival: Relationship-history consent boundary',sourceType:'email_archive',importedAt:'2026-06-23T09:00:00Z',sourceStatusDate:'2026-05-29',visibility:'restricted',consentLevel:'confidential_internal_only',publicUseAllowed:false,legalAdvice:false,notes:'Privacy boundary fixture; no private emails included.',segments:[{artifactId:'archival-email-consent-boundary',id:'seg-consent',heading:'Consent boundary',text:'Relationship-history material must not become public campaign copy without current consent and review.',visibility:'restricted',consentLevel:'confidential_internal_only',publicUseAllowed:false}]};
-export function sourceArtifacts():SourceArtifact[]{return [parseRunningMinutes(runningMinutesExcerpt),movementMap,legalRedline,archivalBoundary]}
+export const movementMap: SourceArtifact = {
+  id: 'movement-map-policy-lineages',
+  title: 'NAC Movement Map in Terms of Policy Lineages',
+  sourceType: 'visual_map',
+  importedAt: '2026-06-23T09:00:00Z',
+  sourceStatusDate: '2026-05-29',
+  visibility: 'team_internal',
+  consentLevel: 'unknown',
+  publicUseAllowed: false,
+  legalAdvice: false,
+  notes: 'Structured fixture, no image OCR.',
+  segments: [
+    {
+      artifactId: 'movement-map-policy-lineages',
+      id: 'seg-lineage',
+      heading: 'Lineage',
+      text: 'The map separates SBJSA, CRS, city Council, and Albany lanes and flags wedge traps to avoid.',
+      visibility: 'team_internal',
+      consentLevel: 'unknown',
+      publicUseAllowed: false,
+    },
+  ],
+};
+export const legalRedline: SourceArtifact = {
+  id: 'legislative-provenance-redline-2019-2025',
+  title: 'NAC / Commercial Rent Stabilization: Legislative Provenance Redline, 2019–2025',
+  sourceType: 'legislative_redline',
+  importedAt: '2026-06-23T09:00:00Z',
+  sourceStatusDate: '2026-05-29',
+  visibility: 'restricted',
+  consentLevel: 'unknown',
+  publicUseAllowed: false,
+  legalAdvice: false,
+  notes: 'Orientation and provenance tool, not legal advice.',
+  segments: [
+    {
+      artifactId: 'legislative-provenance-redline-2019-2025',
+      id: 'seg-how-to-read',
+      heading: 'How to read',
+      text: 'Use the redline to orient lineage among Intro 93, Fair Rent NYC recommendations, SBJSA-derived renewal language, Albany bills, and provisions needing legal review.',
+      visibility: 'restricted',
+      consentLevel: 'unknown',
+      publicUseAllowed: false,
+    },
+  ],
+};
+export const archivalBoundary: SourceArtifact = {
+  id: 'archival-email-consent-boundary',
+  title: '#FairRentNYC Archival: Relationship-history consent boundary',
+  sourceType: 'email_archive',
+  importedAt: '2026-06-23T09:00:00Z',
+  sourceStatusDate: '2026-05-29',
+  visibility: 'restricted',
+  consentLevel: 'confidential_internal_only',
+  publicUseAllowed: false,
+  legalAdvice: false,
+  notes: 'Privacy boundary fixture; no private emails included.',
+  segments: [
+    {
+      artifactId: 'archival-email-consent-boundary',
+      id: 'seg-consent',
+      heading: 'Consent boundary',
+      text: 'Relationship-history material must not become public campaign copy without current consent and review.',
+      visibility: 'restricted',
+      consentLevel: 'confidential_internal_only',
+      publicUseAllowed: false,
+    },
+  ],
+};
+export function sourceArtifacts(): SourceArtifact[] {
+  return [parseRunningMinutes(runningMinutesExcerpt), movementMap, legalRedline, archivalBoundary];
+}

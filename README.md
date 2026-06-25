@@ -1,88 +1,48 @@
-# Noting.us — FairRentNYC Scaffold
+# Noting.us
 
-Noting.us is a Markdown-first, wiki-backed private team-memory system. It turns meetings, transcripts, documents, decisions, and collaboration artifacts into governed, editable, source-linked shared memory. AI assistance is labeled as draft help; humans remain the authority.
+Noting.us is a Markdown-first, wiki-backed private knowledge system for governed, source-linked team memory. The first demo universe is FairRentNYC / Commercial Rent Stabilization at `/u/fairrentnyc`.
 
-## Why FairRentNYC
+## Requirements
 
-The Fair Rent NYC / Commercial Rent Stabilization universe exercises movement memory, policy lineage, coalition governance, consent-sensitive story leads, public/internal boundaries, and legal caution.
+- Node.js 22
+- pnpm 9.15.0
 
-## What this scaffold demonstrates
+No secrets or external services are required for the local demo.
 
-- One demo universe at `/u/fairrentnyc` for `fairrentnyc.noting.us`.
-- Running-minutes parsing into stable source segments.
-- Four modeled source artifacts: running minutes, visual lineage map, legislative redline, and restricted archival consent boundary.
-- Sixteen deterministic Markdown page bundles with metadata, citations, evals, permissions, revisions, and MediaWiki-compatible export previews.
-- A Next.js UI for sources, bundles, wiki previews, review, actions, open questions, story consent, lineages, governance, evals, export, and demo script.
-
-## What it intentionally does not do
-
-No production auth, billing, database, real LLM calls, real MediaWiki sync, Google/Gmail/Slack/Zoom connectors, OCR, CRM, legal research automation, or public campaign publishing workflow.
-
-## Install and run
+## Quick start
 
 ```bash
 pnpm install
 pnpm demo:seed
-pnpm dev
+pnpm validate:fixtures
+pnpm typecheck
 pnpm test
-pnpm build
 pnpm evals
+pnpm build
+pnpm dev
 ```
 
 Open `http://localhost:3000/u/fairrentnyc`.
 
-## Directory structure
+## Useful commands
 
-- `apps/web`: Next.js demo UI.
-- `packages/core`: domain types, demo universe, organizations, people, NotingBot identities.
-- `packages/ingest`: deterministic running-minutes parser.
-- `packages/wiki`: Markdown-to-wikitext preview seam and MediaWiki stub.
-- `packages/evals`: deterministic trust-loop evals.
-- `packages/fixtures`: FairRentNYC sources and page-bundle generator.
-- `content/demo/fairrentnyc`: generated source and bundle fixtures from `pnpm demo:seed`.
-- `docs`: architecture, demo script, product notes, source policy.
-- `scripts`: seed and eval entry points.
+- `pnpm demo:seed` regenerates safe FairRentNYC source and bundle fixtures under `content/demo/fairrentnyc`.
+- `pnpm validate:fixtures` validates source artifacts, page bundles, required sidecars, and review events.
+- `pnpm evals` runs deterministic trust-loop evals.
+- `pnpm export:bundle legal-bill-text-review` writes `content/demo/fairrentnyc/exports/legal-bill-text-review.zip` with sidecars and `export-manifest.json`.
+- `pnpm format` runs Prettier.
 
-## Demo route walkthrough
+## Workspace
 
-1. `/u/fairrentnyc` — universe dashboard.
-2. `/u/fairrentnyc/sources` — source artifact list.
-3. `/u/fairrentnyc/sources/running-minutes-2026-05-29` — stable source segments.
-4. `/u/fairrentnyc/bundles` — Markdown page bundles.
-5. `/u/fairrentnyc/bundles/legal-bill-text-review` — metadata, citations, evals, permissions, wiki export.
-6. `/u/fairrentnyc/wiki` — wiki-like preview index.
-7. `/u/fairrentnyc/review` — simulated human correction path.
-8. `/u/fairrentnyc/evals` — source grounding, consent, lane clarity, stale status, and legal warning checks.
-9. `/u/fairrentnyc/export` — Markdown export sidecar explanation.
-10. `/u/fairrentnyc/demo` — guided demo checklist.
+- `apps/web` — Next.js demo UI.
+- `packages/core` — domain types and Zod schemas.
+- `packages/ingest` — deterministic parsing helpers.
+- `packages/page-bundles` — bundle validation/read/write/export helpers.
+- `packages/wiki` — Markdown-to-wikitext preview seam.
+- `packages/evals` — deterministic trust-loop evals.
+- `packages/fixtures` — safe FairRentNYC fixtures.
+- `content/demo/fairrentnyc` — canonical generated demo content root.
 
-## Source materials modeled
+## Safety boundary
 
-- Commercial Rent Stabilization Collaboration — Running Minutes excerpt, source status date `2026-05-29`, default `team_internal`.
-- NAC Movement Map in Terms of Policy Lineages, structured visual-map fixture, default `team_internal`.
-- NAC / Commercial Rent Stabilization Legislative Provenance Redline, restricted and not legal advice.
-- Archival relationship-history consent boundary, restricted and not public-use allowed.
-
-## Privacy, consent, legal caution
-
-The fixtures default to `team_internal` or `restricted`; public use is false unless explicitly reviewed. Story-like and relationship-history material carries consent levels. Legal pages are marked `legal_advice: false`, require human review, and preserve “as of 2026-05-29” status language.
-
-## Bot attribution and human review
-
-Generated pages use `NotingBot/...` identities and the required disclaimer. The review queue shows a bot draft and a simulated human correction for Legal / Bill Text Review.
-
-## Markdown export
-
-Each bundle contains `page.md`, `page.meta.json`, `sources.jsonl`, `evals.json`, `permissions.json`, `wiki-export.wikitext`, and revisions.
-
-## Known limitations
-
-The UI is intentionally plain. Fixtures are deterministic. Review actions are static affordances rather than persisted local mutations. Zod schemas are noted as a next step while TypeScript interfaces are authoritative.
-
-## Next engineering steps
-
-1. Add persisted local review mutations and bundle diff UI.
-2. Replace schema placeholder with Zod validation for source and bundle sidecars.
-3. Add downloadable zip export.
-4. Add fixture import validation in CI.
-5. Add optional authenticated storage once product flow is validated.
+Do not commit raw private material, private emails, phone numbers, private photos, raw sensitive transcripts, unreviewed story details, landlord details, lease terms, contact lists, sign-in sheets, or vulnerable business/tenant information. Demo content must be safe synthetic, safe excerpt, redacted fixture, public-source-derived with attribution, or internal-only with no sensitive details.
