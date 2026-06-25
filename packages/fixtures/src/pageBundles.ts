@@ -1,23 +1,187 @@
-import { BOT_DISCLAIMER, type Citation, type PageBundle, type PageType, type SourceArtifact } from '@noting/core';
+import {
+  BOT_DISCLAIMER,
+  type Citation,
+  type PageBundle,
+  type PageType,
+  type SourceArtifact,
+} from '@noting/core';
 import { markdownToWikiText } from '@noting/wiki';
 import { runAllEvals } from '@noting/evals';
-const pages:[string,string,PageType,string,string,string][]=[
- ['main-page','Main Page','Main','Noting.us Fair Rent NYC universe','This private movement-memory universe keeps CRS collaboration evidence source-linked, editable, and human-reviewed as of 2026-05-29.','running-minutes-2026-05-29:seg-0001'],
- ['current-shared-language','Current Shared Language','Overview','Current shared language','CRS gives small businesses and cultural spaces a fair chance to renew leases with predictable increases as of 2026-05-29. This is draft language, not final coalition approval.','running-minutes-2026-05-29:seg-0006'],
- ['city-lane','City Lane','Workstream','City lane','City lane status remains important; confirm current Council status before broad release. Lane: city. As of 2026-05-29.','running-minutes-2026-05-29:seg-0007'],
- ['state-lane','State Lane','Workstream','State lane','State lane: the Albany bill is the live introduced vehicle as of 2026-05-29 source date. Confirm before external use.','running-minutes-2026-05-29:seg-0008'],
- ['legal-bill-text-review','Legal / Bill Text Review','LegalReview','Legal and bill-text review','This page is not legal advice. It distinguishes rent-stabilization guardrails from right-to-renewal and automatic-renewal risk. Several provisions need legal / policy review before becoming settled campaign position.','running-minutes-2026-05-29:seg-0009,legislative-provenance-redline-2019-2025:seg-how-to-read'],
- ['coalition-structure','Coalition Structure','Overview','Coalition structure','The shared goal is one stronger movement, not competing city/state or organization lanes. Open governance questions remain review items.','running-minutes-2026-05-29:seg-0003'],
- ['data-signups-follow-up','Data, Signups, and Follow-up','ActionList','Data, signups, and follow-up','Every signup should have source, consent, owner, and follow-up. Partner lists should not be merged without consent and an agreed handoff.','running-minutes-2026-05-29:seg-0011,running-minutes-2026-05-29:seg-0012'],
- ['story-bank-consent-rules','Story Bank Consent Rules','StoryBank','Story bank consent rules','Story leads require consent level before public use: public, anonymized, confidential/internal only, or needs follow-up before sharing.','running-minutes-2026-05-29:seg-0005,archival-email-consent-boundary:seg-consent'],
- ['movement-map-policy-lineages','Movement Map / Policy Lineages','PolicyLineage','Movement map and policy lineages','The lineage map separates SBJSA, CRS, city Council, and Albany lanes, and helps avoid wedge traps by keeping claims source-linked.','movement-map-policy-lineages:seg-lineage'],
- ['legislative-provenance-redline','Legislative Provenance Redline','LegalReview','Legislative provenance redline','Orientation only, not legal advice: distinguish Intro 93, Fair Rent NYC recommendations, SBJSA-derived renewal language, Albany revisions, and legal-review provisions.','legislative-provenance-redline-2019-2025:seg-how-to-read'],
- ['governance-consent-and-tenant-safety','Governance / Consent and Tenant Safety','Governance','Consent and tenant safety governance','Consent/safety beats storytelling. Confidential and needs-follow-up story material is internal until reviewed.','archival-email-consent-boundary:seg-consent'],
- ['governance-public-vs-internal-materials','Governance / Public vs Internal Materials','Governance','Public vs internal materials','Internal source material is not public campaign copy. Export preserves visibility, review status, and public-use fields.','running-minutes-2026-05-29:seg-0004'],
- ['evals-source-grounding','Evals / Source Grounding','Eval','Source grounding eval','Every important claim needs a receipt; this eval checks that citations resolve to source artifacts and segments.','running-minutes-2026-05-29:seg-0004'],
- ['evals-consent-boundary','Evals / Consent Boundary','Eval','Consent boundary eval','The consent eval fails if confidential or needs-follow-up story material is marked public-use allowed.','running-minutes-2026-05-29:seg-0005'],
- ['evals-city-state-lane-clarity','Evals / City-State Lane Clarity','Eval','City/state lane clarity eval','City lane and state lane are aligned, not identical; this eval warns if status is merged without labels.','running-minutes-2026-05-29:seg-0002'],
- ['evals-legal-claim-boundary','Evals / Legal Claim Boundary','Eval','Legal claim boundary eval','Legal pages must be not legal advice and route bill-text claims through human review.','legislative-provenance-redline-2019-2025:seg-how-to-read']
+const pages: [string, string, PageType, string, string, string][] = [
+  [
+    'main-page',
+    'Main Page',
+    'Main',
+    'Noting.us Fair Rent NYC universe',
+    'This private movement-memory universe keeps CRS collaboration evidence source-linked, editable, and human-reviewed as of 2026-05-29.',
+    'running-minutes-2026-05-29:seg-0001',
+  ],
+  [
+    'current-shared-language',
+    'Current Shared Language',
+    'Overview',
+    'Current shared language',
+    'CRS gives small businesses and cultural spaces a fair chance to renew leases with predictable increases as of 2026-05-29. This is draft language, not final coalition approval.',
+    'running-minutes-2026-05-29:seg-0006',
+  ],
+  [
+    'city-lane',
+    'City Lane',
+    'Workstream',
+    'City lane',
+    'City lane status remains important; confirm current Council status before broad release. Lane: city. As of 2026-05-29.',
+    'running-minutes-2026-05-29:seg-0007',
+  ],
+  [
+    'state-lane',
+    'State Lane',
+    'Workstream',
+    'State lane',
+    'State lane: the Albany bill is the live introduced vehicle as of 2026-05-29 source date. Confirm before external use.',
+    'running-minutes-2026-05-29:seg-0008',
+  ],
+  [
+    'legal-bill-text-review',
+    'Legal / Bill Text Review',
+    'LegalReview',
+    'Legal and bill-text review',
+    'This page is not legal advice. It distinguishes rent-stabilization guardrails from right-to-renewal and automatic-renewal risk. Several provisions need legal / policy review before becoming settled campaign position.',
+    'running-minutes-2026-05-29:seg-0009,legislative-provenance-redline-2019-2025:seg-how-to-read',
+  ],
+  [
+    'coalition-structure',
+    'Coalition Structure',
+    'Overview',
+    'Coalition structure',
+    'The shared goal is one stronger movement, not competing city/state or organization lanes. Open governance questions remain review items.',
+    'running-minutes-2026-05-29:seg-0003',
+  ],
+  [
+    'data-signups-follow-up',
+    'Data, Signups, and Follow-up',
+    'ActionList',
+    'Data, signups, and follow-up',
+    'Every signup should have source, consent, owner, and follow-up. Partner lists should not be merged without consent and an agreed handoff.',
+    'running-minutes-2026-05-29:seg-0011,running-minutes-2026-05-29:seg-0012',
+  ],
+  [
+    'story-bank-consent-rules',
+    'Story Bank Consent Rules',
+    'StoryBank',
+    'Story bank consent rules',
+    'Story leads require consent level before public use: public, anonymized, confidential/internal only, or needs follow-up before sharing.',
+    'running-minutes-2026-05-29:seg-0005,archival-email-consent-boundary:seg-consent',
+  ],
+  [
+    'movement-map-policy-lineages',
+    'Movement Map / Policy Lineages',
+    'PolicyLineage',
+    'Movement map and policy lineages',
+    'The lineage map separates SBJSA, CRS, city Council, and Albany lanes, and helps avoid wedge traps by keeping claims source-linked.',
+    'movement-map-policy-lineages:seg-lineage',
+  ],
+  [
+    'legislative-provenance-redline',
+    'Legislative Provenance Redline',
+    'LegalReview',
+    'Legislative provenance redline',
+    'Orientation only, not legal advice: distinguish Intro 93, Fair Rent NYC recommendations, SBJSA-derived renewal language, Albany revisions, and legal-review provisions.',
+    'legislative-provenance-redline-2019-2025:seg-how-to-read',
+  ],
+  [
+    'governance-consent-and-tenant-safety',
+    'Governance / Consent and Tenant Safety',
+    'Governance',
+    'Consent and tenant safety governance',
+    'Consent/safety beats storytelling. Confidential and needs-follow-up story material is internal until reviewed.',
+    'archival-email-consent-boundary:seg-consent',
+  ],
+  [
+    'governance-public-vs-internal-materials',
+    'Governance / Public vs Internal Materials',
+    'Governance',
+    'Public vs internal materials',
+    'Internal source material is not public campaign copy. Export preserves visibility, review status, and public-use fields.',
+    'running-minutes-2026-05-29:seg-0004',
+  ],
+  [
+    'evals-source-grounding',
+    'Evals / Source Grounding',
+    'Eval',
+    'Source grounding eval',
+    'Every important claim needs a receipt; this eval checks that citations resolve to source artifacts and segments.',
+    'running-minutes-2026-05-29:seg-0004',
+  ],
+  [
+    'evals-consent-boundary',
+    'Evals / Consent Boundary',
+    'Eval',
+    'Consent boundary eval',
+    'The consent eval fails if confidential or needs-follow-up story material is marked public-use allowed.',
+    'running-minutes-2026-05-29:seg-0005',
+  ],
+  [
+    'evals-city-state-lane-clarity',
+    'Evals / City-State Lane Clarity',
+    'Eval',
+    'City/state lane clarity eval',
+    'City lane and state lane are aligned, not identical; this eval warns if status is merged without labels.',
+    'running-minutes-2026-05-29:seg-0002',
+  ],
+  [
+    'evals-legal-claim-boundary',
+    'Evals / Legal Claim Boundary',
+    'Eval',
+    'Legal claim boundary eval',
+    'Legal pages must be not legal advice and route bill-text claims through human review.',
+    'legislative-provenance-redline-2019-2025:seg-how-to-read',
+  ],
 ];
-function citations(spec:string):Citation[]{return spec.split(',').map((x,i)=>{const [artifactId,seg]=x.split(':'); return {id:`cit-${i+1}`,artifactId,segmentIds:[seg],label:`${artifactId}#${seg}`}})}
-export function generateFairRentPageBundles(artifacts:SourceArtifact[]):PageBundle[]{return pages.map(([slug,title,type,h,body,spec])=>{const legal=type==='LegalReview'; const story=type==='StoryBank'; const meta={notingId:slug,status:'generated_draft' as const,reviewStatus:'needs_human_review' as const,visibility:legal?'restricted' as const:'team_internal' as const,consentLevel:story?'needs_follow_up_before_sharing' as const:'unknown' as const,generatedBy:legal?'NotingBot/Legal-Claim-Check':'NotingBot/Movement-Memory-Gardener',createdAt:'2026-06-23T09:00:00Z',sourceArtifacts:[...new Set(citations(spec).map(c=>c.artifactId))],sourceStatusDate:'2026-05-29',publicUseAllowed:false,legalAdvice:false as const}; const src=citations(spec); const markdown=`---\nnoting_id: ${slug}\npage_type: ${type}\nwiki_title: "${title}"\nstatus: generated_draft\nreview_status: needs_human_review\nvisibility: ${meta.visibility}\ngenerated_by: "${meta.generatedBy}"\nsource_status_date: "2026-05-29"\npublic_use_allowed: false\nlegal_advice: false\n---\n\n# ${title}\n\n> Generated draft — needs human review.\n>\n> ${BOT_DISCLAIMER}\n${legal?'>\n> This page is not legal advice.\n':''}\n## ${h}\n\n${body}\n\n## Source Basis\n\n${src.map(c=>`- [source:${c.artifactId}#${c.segmentIds[0]}]`).join('\n')}\n\n## Review Needed\n\n- Confirm public safety.\n- Confirm whether status changed after as of 2026-05-29.\n- Keep unresolved questions out of approved decisions.\n`; const bundle={id:slug,slug,wikiTitle:title,pageType:type,markdown,metadata:meta,sources:src,evals:[] as import('@noting/core').EvalResult[],permissions:{visibility:meta.visibility,exportAllowed:true,requiresHumanReview:true,sourceQuoteVisibility:legal?'restricted' as const:'visible' as const,retentionPolicy:'default' as const,sensitivePeople:[]},wikiPreview:markdownToWikiText(markdown)}; bundle.evals=runAllEvals(bundle,artifacts); return bundle})}
+function citations(spec: string): Citation[] {
+  return spec.split(',').map((x, i) => {
+    const [artifactId, seg] = x.split(':');
+    return { id: `cit-${i + 1}`, artifactId, segmentIds: [seg], label: `${artifactId}#${seg}` };
+  });
+}
+export function generateFairRentPageBundles(artifacts: SourceArtifact[]): PageBundle[] {
+  return pages.map(([slug, title, type, h, body, spec]) => {
+    const legal = type === 'LegalReview';
+    const story = type === 'StoryBank';
+    const meta = {
+      notingId: slug,
+      status: 'generated_draft' as const,
+      reviewStatus: 'needs_human_review' as const,
+      visibility: legal ? ('restricted' as const) : ('team_internal' as const),
+      consentLevel: story ? ('needs_follow_up_before_sharing' as const) : ('unknown' as const),
+      generatedBy: legal ? 'NotingBot/Legal-Claim-Check' : 'NotingBot/Movement-Memory-Gardener',
+      createdAt: '2026-06-23T09:00:00Z',
+      sourceArtifacts: [...new Set(citations(spec).map((c) => c.artifactId))],
+      sourceStatusDate: '2026-05-29',
+      publicUseAllowed: false,
+      legalAdvice: false as const,
+    };
+    const src = citations(spec);
+    const markdown = `---\nnoting_id: ${slug}\npage_type: ${type}\nwiki_title: "${title}"\nstatus: generated_draft\nreview_status: needs_human_review\nvisibility: ${meta.visibility}\ngenerated_by: "${meta.generatedBy}"\nsource_status_date: "2026-05-29"\npublic_use_allowed: false\nlegal_advice: false\n---\n\n# ${title}\n\n> Generated draft — needs human review.\n>\n> ${BOT_DISCLAIMER}\n${legal ? '>\n> This page is not legal advice.\n' : ''}\n## ${h}\n\n${body}\n\n## Source Basis\n\n${src.map((c) => `- [source:${c.artifactId}#${c.segmentIds[0]}]`).join('\n')}\n\n## Review Needed\n\n- Confirm public safety.\n- Confirm whether status changed after as of 2026-05-29.\n- Keep unresolved questions out of approved decisions.\n`;
+    const bundle = {
+      id: slug,
+      slug,
+      wikiTitle: title,
+      pageType: type,
+      markdown,
+      metadata: meta,
+      sources: src,
+      evals: [] as import('@noting/core').EvalResult[],
+      permissions: {
+        visibility: meta.visibility,
+        exportAllowed: true,
+        requiresHumanReview: true,
+        sourceQuoteVisibility: legal ? ('restricted' as const) : ('visible' as const),
+        retentionPolicy: 'default' as const,
+        sensitivePeople: [],
+      },
+      wikiPreview: markdownToWikiText(markdown),
+    };
+    bundle.evals = runAllEvals(bundle, artifacts);
+    return bundle;
+  });
+}

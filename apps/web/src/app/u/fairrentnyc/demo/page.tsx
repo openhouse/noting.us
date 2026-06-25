@@ -1,1 +1,28 @@
-import {Nav} from '../../../../components/Nav'; const steps=['Open /u/fairrentnyc','Open Sources and Running Minutes','Open Bundles and Current Shared Language','Open Legal / Bill Text Review','Open Story Bank Consent Rules','Open Movement Map / Policy Lineages','Open Review Queue','Open Evals','Open Export','Close: governed source-linked memory is the authority']; export default function Page(){return <><Nav/><h1>Guided Demo Checklist</h1><ol>{steps.map(s=><li className="card" key={s}>{s}</li>)}</ol></>}
+import { Nav } from '../../../../components/Nav';
+const steps = [
+  'Open /u/fairrentnyc',
+  'Open Sources and Running Minutes',
+  'Open Bundles and Current Shared Language',
+  'Open Legal / Bill Text Review',
+  'Open Story Bank Consent Rules',
+  'Open Movement Map / Policy Lineages',
+  'Open Review Queue',
+  'Open Evals',
+  'Open Export',
+  'Close: governed source-linked memory is the authority',
+];
+export default function Page() {
+  return (
+    <>
+      <Nav />
+      <h1>Guided Demo Checklist</h1>
+      <ol>
+        {steps.map((s) => (
+          <li className="card" key={s}>
+            {s}
+          </li>
+        ))}
+      </ol>
+    </>
+  );
+}

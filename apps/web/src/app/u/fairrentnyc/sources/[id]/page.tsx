@@ -1,1 +1,25 @@
-import {Nav} from '../../../../../components/Nav'; import {artifacts} from '../../../../../lib/demo'; export default async function Page({params}:{params:Promise<{id:string}>}){const {id}=await params; const a=artifacts.find(x=>x.id===id)??artifacts[0]; return <><Nav/><h1>{a.title}</h1><p>{a.notes}</p><span className="badge">status date {a.sourceStatusDate}</span><span className="badge">{a.visibility}</span>{a.segments.map(s=><div className="card" key={s.id}><h3>{s.id}: {s.heading}</h3><p>{s.text}</p><span className="badge">{s.consentLevel}</span><span className="badge">public use {String(s.publicUseAllowed)}</span></div>)}</>}
+import { Nav } from '../../../../../components/Nav';
+import { artifacts } from '../../../../../lib/demo';
+export default async function Page({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
+  const a = artifacts.find((x) => x.id === id) ?? artifacts[0];
+  return (
+    <>
+      <Nav />
+      <h1>{a.title}</h1>
+      <p>{a.notes}</p>
+      <span className="badge">status date {a.sourceStatusDate}</span>
+      <span className="badge">{a.visibility}</span>
+      {a.segments.map((s) => (
+        <div className="card" key={s.id}>
+          <h3>
+            {s.id}: {s.heading}
+          </h3>
+          <p>{s.text}</p>
+          <span className="badge">{s.consentLevel}</span>
+          <span className="badge">public use {String(s.publicUseAllowed)}</span>
+        </div>
+      ))}
+    </>
+  );
+}

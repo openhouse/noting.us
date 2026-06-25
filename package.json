@@ -9,14 +9,20 @@
     "test": "pnpm -r test",
     "typecheck": "pnpm -r typecheck",
     "demo:seed": "tsx scripts/seed-demo.ts",
-    "evals": "tsx scripts/run-evals.ts"
+    "evals": "tsx scripts/run-evals.ts",
+    "validate:fixtures": "tsx scripts/validate-fixtures.ts",
+    "export:bundle": "tsx scripts/export-bundle.ts",
+    "format": "prettier --write ."
   },
   "devDependencies": {
+    "@noting/core": "workspace:^",
+    "@noting/fixtures": "workspace:*",
+    "@noting/page-bundles": "workspace:^",
     "@types/node": "^22.10.2",
+    "prettier": "^3.8.4",
     "tsx": "^4.19.2",
     "typescript": "^5.7.2",
-    "vitest": "^2.1.8",
-    "@noting/fixtures": "workspace:*"
+    "vitest": "^2.1.8"
   },
   "type": "module"
 }

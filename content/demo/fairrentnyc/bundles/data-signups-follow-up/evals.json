@@ -2,8 +2,8 @@
   {
     "id": "source_grounding",
     "name": "Source Grounding",
-    "status": "fail",
-    "notes": "Missing or unresolved citations."
+    "status": "pass",
+    "notes": "All citations resolve to source artifacts and segments."
   },
   {
     "id": "bot_attribution",
@@ -52,5 +52,11 @@
     "name": "Markdown Export Integrity",
     "status": "pass",
     "notes": "Bundle includes markdown, metadata, citations, evals, permissions."
+  },
+  {
+    "id": "export_metadata_preservation",
+    "name": "Export Metadata Preservation",
+    "status": "pass",
+    "notes": "Export contract preserves sidecars and public-safety metadata."
   }
 ]

@@ -1,5 +1,40 @@
-import { fairRentUniverse, organizations, people, bots } from '@noting/core'; import { sourceArtifacts, generateFairRentPageBundles } from '@noting/fixtures';
-export const artifacts=sourceArtifacts(); export const bundles=generateFairRentPageBundles(artifacts); export const universe=fairRentUniverse; export {organizations,people,bots};
-export const actions=[{action:'Confirm current Council status before broad release',ownerLabel:'Noting Admin',status:'open',nextStep:'Route to city lane review'},{action:'Confirm source/consent/owner for signups',ownerLabel:'Data lane',status:'open',nextStep:'Do not merge partner lists without handoff'}];
-export const questions=[{lane:'city',question:'What is current Council status after the 2026-05-29 source date?'},{lane:'legal_bill_text',question:'Which SBJSA-derived provisions need counsel review before external use?'},{lane:'story_bank',question:'Which story leads have current consent for public sharing?'}];
-export const stories=[{label:'Small business displacement story lead',consentLevel:'needs_follow_up_before_sharing',publicUseAllowed:false},{label:'Historic relationship-history quote',consentLevel:'confidential_internal_only',publicUseAllowed:false}];
+import { fairRentUniverse, organizations, people, bots } from '@noting/core';
+import { sourceArtifacts, generateFairRentPageBundles } from '@noting/fixtures';
+export const artifacts = sourceArtifacts();
+export const bundles = generateFairRentPageBundles(artifacts);
+export const universe = fairRentUniverse;
+export { organizations, people, bots };
+export const actions = [
+  {
+    action: 'Confirm current Council status before broad release',
+    ownerLabel: 'Noting Admin',
+    status: 'open',
+    nextStep: 'Route to city lane review',
+  },
+  {
+    action: 'Confirm source/consent/owner for signups',
+    ownerLabel: 'Data lane',
+    status: 'open',
+    nextStep: 'Do not merge partner lists without handoff',
+  },
+];
+export const questions = [
+  { lane: 'city', question: 'What is current Council status after the 2026-05-29 source date?' },
+  {
+    lane: 'legal_bill_text',
+    question: 'Which SBJSA-derived provisions need counsel review before external use?',
+  },
+  { lane: 'story_bank', question: 'Which story leads have current consent for public sharing?' },
+];
+export const stories = [
+  {
+    label: 'Small business displacement story lead',
+    consentLevel: 'needs_follow_up_before_sharing',
+    publicUseAllowed: false,
+  },
+  {
+    label: 'Historic relationship-history quote',
+    consentLevel: 'confidential_internal_only',
+    publicUseAllowed: false,
+  },
+];
