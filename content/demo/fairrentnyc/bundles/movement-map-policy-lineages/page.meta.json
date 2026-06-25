@@ -1,0 +1,26 @@
+{
+  "notingId": "movement-map-policy-lineages",
+  "status": "generated_draft",
+  "reviewStatus": "needs_human_review",
+  "visibility": "team_internal",
+  "consentLevel": "unknown",
+  "generatedBy": "NotingBot/Movement-Memory-Gardener",
+  "createdAt": "2026-06-23T09:00:00Z",
+  "sourceArtifacts": [
+    "movement-map-policy-lineages"
+  ],
+  "sourceStatusDate": "2026-05-29",
+  "publicUseAllowed": false,
+  "legalAdvice": false,
+  "noting_id": "movement-map-policy-lineages",
+  "page_type": "PolicyLineage",
+  "wiki_title": "Movement Map / Policy Lineages",
+  "review_status": "needs_human_review",
+  "source_artifacts": [
+    "movement-map-policy-lineages"
+  ],
+  "source_status_date": "2026-05-29",
+  "public_use_allowed": false,
+  "legal_advice": false,
+  "generated_by": "NotingBot/Movement-Memory-Gardener"
+}

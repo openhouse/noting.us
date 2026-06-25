@@ -1,0 +1,23 @@
+{
+  "id": "movement-map-policy-lineages",
+  "title": "NAC Movement Map in Terms of Policy Lineages",
+  "sourceType": "visual_map",
+  "importedAt": "2026-06-23T09:00:00Z",
+  "sourceStatusDate": "2026-05-29",
+  "visibility": "team_internal",
+  "consentLevel": "unknown",
+  "publicUseAllowed": false,
+  "legalAdvice": false,
+  "notes": "Structured fixture, no image OCR.",
+  "segments": [
+    {
+      "artifactId": "movement-map-policy-lineages",
+      "id": "seg-lineage",
+      "heading": "Lineage",
+      "text": "The map separates SBJSA, CRS, city Council, and Albany lanes and flags wedge traps to avoid.",
+      "visibility": "team_internal",
+      "consentLevel": "unknown",
+      "publicUseAllowed": false
+    }
+  ]
+}

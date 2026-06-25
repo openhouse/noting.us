@@ -1,0 +1,8 @@
+{
+  "visibility": "restricted",
+  "exportAllowed": true,
+  "requiresHumanReview": true,
+  "sourceQuoteVisibility": "restricted",
+  "retentionPolicy": "default",
+  "sensitivePeople": []
+}

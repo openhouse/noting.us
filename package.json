@@ -1,0 +1,22 @@
+{
+  "name": "noting.us",
+  "private": true,
+  "packageManager": "pnpm@9.15.0",
+  "scripts": {
+    "dev": "pnpm --filter @noting/web dev",
+    "build": "pnpm -r build",
+    "lint": "pnpm -r lint",
+    "test": "pnpm -r test",
+    "typecheck": "pnpm -r typecheck",
+    "demo:seed": "tsx scripts/seed-demo.ts",
+    "evals": "tsx scripts/run-evals.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8",
+    "@noting/fixtures": "workspace:*"
+  },
+  "type": "module"
+}

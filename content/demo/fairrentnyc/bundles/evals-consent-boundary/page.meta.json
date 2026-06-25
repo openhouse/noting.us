@@ -1,0 +1,26 @@
+{
+  "notingId": "evals-consent-boundary",
+  "status": "generated_draft",
+  "reviewStatus": "needs_human_review",
+  "visibility": "team_internal",
+  "consentLevel": "unknown",
+  "generatedBy": "NotingBot/Movement-Memory-Gardener",
+  "createdAt": "2026-06-23T09:00:00Z",
+  "sourceArtifacts": [
+    "running-minutes-2026-05-29"
+  ],
+  "sourceStatusDate": "2026-05-29",
+  "publicUseAllowed": false,
+  "legalAdvice": false,
+  "noting_id": "evals-consent-boundary",
+  "page_type": "Eval",
+  "wiki_title": "Evals / Consent Boundary",
+  "review_status": "needs_human_review",
+  "source_artifacts": [
+    "running-minutes-2026-05-29"
+  ],
+  "source_status_date": "2026-05-29",
+  "public_use_allowed": false,
+  "legal_advice": false,
+  "generated_by": "NotingBot/Movement-Memory-Gardener"
+}

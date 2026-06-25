@@ -1,0 +1,30 @@
+[
+  {
+    "id": "running-minutes-2026-05-29",
+    "title": "Commercial Rent Stabilization Collaboration — Running Minutes",
+    "sourceType": "running_minutes",
+    "visibility": "team_internal",
+    "publicUseAllowed": false
+  },
+  {
+    "id": "movement-map-policy-lineages",
+    "title": "NAC Movement Map in Terms of Policy Lineages",
+    "sourceType": "visual_map",
+    "visibility": "team_internal",
+    "publicUseAllowed": false
+  },
+  {
+    "id": "legislative-provenance-redline-2019-2025",
+    "title": "NAC / Commercial Rent Stabilization: Legislative Provenance Redline, 2019–2025",
+    "sourceType": "legislative_redline",
+    "visibility": "restricted",
+    "publicUseAllowed": false
+  },
+  {
+    "id": "archival-email-consent-boundary",
+    "title": "#FairRentNYC Archival: Relationship-history consent boundary",
+    "sourceType": "email_archive",
+    "visibility": "restricted",
+    "publicUseAllowed": false
+  }
+]
