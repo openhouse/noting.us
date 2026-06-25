@@ -1,0 +1,56 @@
+[
+  {
+    "id": "source_grounding",
+    "name": "Source Grounding",
+    "status": "fail",
+    "notes": "Missing or unresolved citations."
+  },
+  {
+    "id": "bot_attribution",
+    "name": "Bot Attribution",
+    "status": "pass",
+    "notes": "Generated work is attributed to a NotingBot."
+  },
+  {
+    "id": "decision_vs_discussion",
+    "name": "Decision vs Discussion",
+    "status": "pass",
+    "notes": "No unsupported decision language detected."
+  },
+  {
+    "id": "consent_boundary",
+    "name": "Consent Boundary",
+    "status": "pass",
+    "notes": "Consent/public-use boundary preserved."
+  },
+  {
+    "id": "public_internal_boundary",
+    "name": "Public/Internal Boundary",
+    "status": "pass",
+    "notes": "No public/internal leak detected."
+  },
+  {
+    "id": "legal_claim_boundary",
+    "name": "Legal Claim Boundary",
+    "status": "pass",
+    "notes": "Legal caution preserved."
+  },
+  {
+    "id": "city_state_lane_clarity",
+    "name": "City/State Lane Clarity",
+    "status": "pass",
+    "notes": "City/state claims are labeled or absent."
+  },
+  {
+    "id": "stale_status_warning",
+    "name": "Stale Status Warning",
+    "status": "pass",
+    "notes": "Source-dated status preserved."
+  },
+  {
+    "id": "markdown_export_integrity",
+    "name": "Markdown Export Integrity",
+    "status": "pass",
+    "notes": "Bundle includes markdown, metadata, citations, evals, permissions."
+  }
+]

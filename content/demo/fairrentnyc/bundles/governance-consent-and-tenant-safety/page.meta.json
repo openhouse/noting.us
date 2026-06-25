@@ -1,0 +1,26 @@
+{
+  "notingId": "governance-consent-and-tenant-safety",
+  "status": "generated_draft",
+  "reviewStatus": "needs_human_review",
+  "visibility": "team_internal",
+  "consentLevel": "unknown",
+  "generatedBy": "NotingBot/Movement-Memory-Gardener",
+  "createdAt": "2026-06-23T09:00:00Z",
+  "sourceArtifacts": [
+    "archival-email-consent-boundary"
+  ],
+  "sourceStatusDate": "2026-05-29",
+  "publicUseAllowed": false,
+  "legalAdvice": false,
+  "noting_id": "governance-consent-and-tenant-safety",
+  "page_type": "Governance",
+  "wiki_title": "Governance / Consent and Tenant Safety",
+  "review_status": "needs_human_review",
+  "source_artifacts": [
+    "archival-email-consent-boundary"
+  ],
+  "source_status_date": "2026-05-29",
+  "public_use_allowed": false,
+  "legal_advice": false,
+  "generated_by": "NotingBot/Movement-Memory-Gardener"
+}

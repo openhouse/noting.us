@@ -1,0 +1,22 @@
+{
+  "name": "@noting/fixtures",
+  "version": "0.0.0",
+  "type": "module",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "lint": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run --passWithNoTests"
+  },
+  "dependencies": {
+    "@noting/core": "workspace:*",
+    "@noting/ingest": "workspace:*",
+    "@noting/wiki": "workspace:*",
+    "@noting/evals": "workspace:*"
+  },
+  "exports": {
+    ".": "./src/index.ts"
+  }
+}

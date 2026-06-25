@@ -1,0 +1,1 @@
+import {Nav} from '../../../../components/Nav'; import {bundles} from '../../../../lib/demo'; export default function Page(){const b=bundles.find(x=>x.slug==='movement-map-policy-lineages')!; return <><Nav/><h1>Policy Lineage Map / Timeline</h1><div className="card"><pre>{b.markdown}</pre></div></>}

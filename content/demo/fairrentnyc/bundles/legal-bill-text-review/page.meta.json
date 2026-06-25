@@ -1,0 +1,28 @@
+{
+  "notingId": "legal-bill-text-review",
+  "status": "generated_draft",
+  "reviewStatus": "needs_human_review",
+  "visibility": "restricted",
+  "consentLevel": "unknown",
+  "generatedBy": "NotingBot/Legal-Claim-Check",
+  "createdAt": "2026-06-23T09:00:00Z",
+  "sourceArtifacts": [
+    "running-minutes-2026-05-29",
+    "legislative-provenance-redline-2019-2025"
+  ],
+  "sourceStatusDate": "2026-05-29",
+  "publicUseAllowed": false,
+  "legalAdvice": false,
+  "noting_id": "legal-bill-text-review",
+  "page_type": "LegalReview",
+  "wiki_title": "Legal / Bill Text Review",
+  "review_status": "needs_human_review",
+  "source_artifacts": [
+    "running-minutes-2026-05-29",
+    "legislative-provenance-redline-2019-2025"
+  ],
+  "source_status_date": "2026-05-29",
+  "public_use_allowed": false,
+  "legal_advice": false,
+  "generated_by": "NotingBot/Legal-Claim-Check"
+}

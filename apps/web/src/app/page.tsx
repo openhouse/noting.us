@@ -1,0 +1,1 @@
+import {Nav} from '../components/Nav'; export default function Home(){return <><Nav/><div className="card"><h1>Noting.us</h1><p>Markdown-first, wiki-backed private team memory. AI appears only as labeled drafting assistance; humans remain the authority.</p><a href="/u/fairrentnyc">Open FairRentNYC demo universe</a></div></>}

@@ -1,0 +1,8 @@
+{
+  "visibility": "team_internal",
+  "exportAllowed": true,
+  "requiresHumanReview": true,
+  "sourceQuoteVisibility": "visible",
+  "retentionPolicy": "default",
+  "sensitivePeople": []
+}
